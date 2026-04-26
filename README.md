@@ -1,6 +1,6 @@
 # Hikvision Next
 
-![GitHub release (latest by date)](https://github.com/spiderjuka/hikvision_next_custom?style=flat-square) [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration)
+[![GitHub Release][releases-shield]][releases]
 
 The Home Assistant integration for Hikvision NVRs and IP cameras. Receives and switches detection of alarm events. Provides video streams.
 
@@ -159,3 +159,9 @@ Download logs from `Settings / System / Logs`
 - DS-2DE4425IW-DE (PTZ)
 - DS-2SE4C425MWG-E/26
 - DS-2CD2655FWD-IZS_5MP
+
+---
+[releases-shield]: https://img.shields.io/github/release/spiderjuka/hikvision_next_custom.svg?style=for-the-badge
+[releases]: https://github.com/spiderjuka/hikvision_next_custom/releases
+
+
