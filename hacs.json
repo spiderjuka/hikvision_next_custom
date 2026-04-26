@@ -1,5 +1,7 @@
 {
   "name": "Hikvision NVR / IP Camera",
   "render_readme": true,
-  "homeassistant": "2022.8"
+  "homeassistant": "2022.8",
+  "zip_release": true,
+  "filename": "foxess_modbus.zip"
 }
