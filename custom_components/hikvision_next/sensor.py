@@ -7,6 +7,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity import EntityCategory
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from homeassistant.util import slugify
 
 from . import HikvisionConfigEntry
 from .const import CONF_ALARM_SERVER_HOST, SECONDARY_COORDINATOR
@@ -52,7 +53,7 @@ class AlarmServerSensor(CoordinatorEntity, SensorEntity):
         """Initialize."""
         super().__init__(coordinator)
         device = coordinator.device
-        self._attr_unique_id = f"{device.device_info.serial_no}_{CONF_ALARM_SERVER_HOST}_{key}"
+        self._attr_unique_id = slugify(f"{device.device_info.serial_no}_{CONF_ALARM_SERVER_HOST}_{key}")
         self.entity_id = ENTITY_ID_FORMAT.format(self.unique_id)
         self._attr_device_info = device.hass_device_info()
         self._attr_translation_key = f"notifications_host_{key}"
@@ -76,7 +77,7 @@ class StorageSensor(CoordinatorEntity, SensorEntity):
         """Initialize."""
         super().__init__(coordinator)
         device = coordinator.device
-        self._attr_unique_id = f"{device.device_info.serial_no}_{hdd.id}_{hdd.name}"
+        self._attr_unique_id = slugify(f"{device.device_info.serial_no}_{hdd.id}_{hdd.name}")
         self.entity_id = ENTITY_ID_FORMAT.format(self.unique_id)
         self._attr_device_info = device.hass_device_info()
         self._attr_name = f"{hdd.type} {hdd.name}"
